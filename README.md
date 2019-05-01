@@ -18,4 +18,4 @@ Alysha Buselt
 - JS
 - Sass
 - React
-- Parcel 
+- Webpack
