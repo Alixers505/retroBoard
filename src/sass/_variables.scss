@@ -1,4 +1,27 @@
-// Colors
-
+// Base Colors
 $black: #000;
 $white: #fff;
+$success: #02fd6a;
+$alert: #fd0218;
+$warning: #fde802;
+$info: #0295fd;
+$grey-9: lighten($black, 10);
+$grey-8: lighten($black, 20);
+$grey-7: lighten($black, 30);
+$grey-6: lighten($black, 40);
+$grey-5: lighten($black, 50);
+$grey-4: lighten($black, 60);
+$grey-3: lighten($black, 70);
+$grey-2: lighten($black, 80);
+$grey-1: lighten($black, 90);
+
+// Theme Colors
+$primary: lighten($info, 30);
+$secondary: lighten($success, 30);
+$tertiary: lighten($alert, 30);
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:400,700');
+$cursive: 'Permanent Marker', cursive;
+$sans-serif: 'Roboto', sans-serif;

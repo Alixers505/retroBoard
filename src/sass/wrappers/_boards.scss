@@ -1,0 +1,47 @@
+#board {
+  display: flex;
+  min-height: 60vh;
+}
+
+.board-col {
+  @extend %flex-col;
+  background-color: $white;
+  border-radius: 10px;
+  flex: 0 1 100%;
+  margin: 1%;
+  padding: 15px;
+
+  &:first-child {
+    border: 2px solid $success;
+
+    .card {
+      background-color: $secondary;
+    }
+  }
+  &:nth-child(2) {
+    border: 2px solid $alert;
+
+    .card {
+      background-color: $tertiary;
+    }
+  }
+  &:nth-child(3) {
+    border: 2px solid $info;
+
+    .card {
+      background-color: $primary;
+    }
+  }
+}
+
+.flex-row {
+  @extend %flex-row;
+  border-bottom: 2px solid grey;
+  padding-bottom: 10px;
+}
+
+.col-title {
+  display: flex;
+  flex: 0 1 100%;
+  text-align: center;
+}

@@ -3,3 +3,34 @@
     border: 1px dotted $black;
   }
 }
+
+.add-card {
+  margin-left: 10px;
+}
+
+.close-modal,
+.delete-card,
+.edit-card {
+  @extend %btn-position;
+  @extend %icon-img;
+}
+
+.close-modal,
+.edit-card {
+  top: 5px;
+}
+
+.submit-card,
+.delete-card {
+  bottom: 5px;
+  font-size: 12px;
+  padding: 3px 3px 1px 3px;
+}
+
+.submit-card {
+  @extend %btn-position;
+  background-color: darken($success, 15);
+  color: $white;
+  font: bold 20px/1.5 $sans-serif;
+  padding: 2px 7px;
+}

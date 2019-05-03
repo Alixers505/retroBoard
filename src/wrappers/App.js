@@ -8,13 +8,13 @@ import DemoBoard from './DemoBoard';
 const App = () => {
   return (
     <Router>
-      <div>
+      <div id="page-wrapper">
         <header>
           <nav>
             <div>
               <h1>
                 <Link to="/" id="logo">
-                  retroBoard
+                  RainbowRetro
                 </Link>
               </h1>
             </div>
@@ -37,7 +37,7 @@ const App = () => {
         </main>
         <footer>
           <nav>
-            Created by
+            Created by:
             <a href="https://github.com/Alixers505">Alysha Buselt</a>
             🐻
           </nav>
