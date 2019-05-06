@@ -9,6 +9,8 @@
   ],
   "rules": {
     "react/prop-types": 0,
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
     "jsx-a11y/label-has-for": 0,
     "no-console": 1
   },

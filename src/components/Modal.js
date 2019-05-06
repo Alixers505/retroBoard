@@ -11,6 +11,20 @@ class Modal extends React.Component {
       return;
     }
   };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: '',
+      header: 'Add a Comment'
+    };
+  }
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+  handleOnAddCardClick = () => {
+    this.props.addCard(this.state.value);
+  };
   render() {
     return (
       <div className="modal-wrapper">
@@ -21,13 +35,19 @@ class Modal extends React.Component {
             text="𝗫"
           />
           <label className="modal-title">
-            <h3>Add a Comment</h3>
+            <h3>{this.state.header}</h3>
           </label>
-          <textarea rows="6" defaultValue="More time for documentation" />
+          <textarea
+            type="text"
+            rows="6"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
           <Button
             className="submit-card"
-            onClick={this.props.addCard}
+            onClick={this.handleOnAddCardClick}
             text="Submit"
+            type="submit"
           />
         </div>
       </div>

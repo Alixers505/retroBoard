@@ -11,19 +11,16 @@ class Column extends React.Component {
   };
   constructor(props) {
     super(props);
-
-    this.state = {
-      cards: [
-        {
-          id: uuid()
-        }
-      ]
-    };
   }
   addCard = () => {
     // Accept input
     // Display input on card
     console.log('Added a card to this column');
+  };
+  handleOnAddClick = () => {
+    // when button is clicked
+    // set currentColumnID to that column's ID
+    this.props.onAddClick(this.props.id);
   };
   render() {
     return (
@@ -31,17 +28,19 @@ class Column extends React.Component {
         <div className="flex-row">
           <input className="col-title" defaultValue="Column Title" />
           <Button
-            onClick={this.props.onAddClick}
+            onClick={this.handleOnAddClick}
             text="✚"
             className="add-card"
           />
         </div>
 
-        <ul className="card-list">
-          {this.state.cards.map(card => {
-            return <Card id={card.id} key={card.id} />;
-          })}
-        </ul>
+        {!!this.props.cards.length && (
+          <ul className="card-list">
+            {this.props.cards.map(card => {
+              return <Card id={card.id} key={card.id} value={card.value} />;
+            })}
+          </ul>
+        )}
       </div>
     );
   }

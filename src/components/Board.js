@@ -9,6 +9,7 @@ class Board extends React.Component {
 
     this.state = {
       modalOpen: false,
+      editingCard: false,
       columns: [
         {
           title: '',
@@ -25,17 +26,40 @@ class Board extends React.Component {
           id: uuid(),
           cards: []
         }
-      ]
+      ],
+      currentColumnID: null
     };
   }
-  openModal = () => {
+  openModal = colID => {
     this.setState(state => {
       return {
-        modalOpen: true
+        modalOpen: true,
+        currentColumnID: colID
       };
     });
   };
   closeModal = () => {
+    this.setState(state => {
+      return {
+        modalOpen: false
+      };
+    });
+  };
+  addCard = cardValue => {
+    const card = {
+      value: cardValue,
+      id: uuid()
+    };
+    // Find the column
+    const column = this.state.columns.find(column => {
+      return column.id === this.state.currentColumnID;
+    });
+
+    // add card to returned column
+    if (column != null) {
+      column.cards.push(card);
+    }
+
     this.setState(state => {
       return {
         modalOpen: false
@@ -60,7 +84,9 @@ class Board extends React.Component {
             );
           })}
         </div>
-        {this.state.modalOpen && <Modal onClose={this.closeModal} />}
+        {this.state.modalOpen && (
+          <Modal onClose={this.closeModal} addCard={this.addCard} />
+        )}
       </div>
     );
   }

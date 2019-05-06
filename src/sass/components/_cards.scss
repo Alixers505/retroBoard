@@ -15,4 +15,5 @@
 .card-list {
   @extend %flex-row;
   @extend %remove-list-styling;
+  flex-wrap: wrap;
 }

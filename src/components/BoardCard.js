@@ -14,11 +14,9 @@ class Card extends React.Component {
     return (
       <div className="card">
         <Button onClick={this.editCard} text="✎" className="edit-card" />
-        <div
-          comment={this.props.comment}
-          id={this.props.id}
-          key={this.props.key}
-        />
+        <div id={this.props.id} key={this.props.id}>
+          {this.props.value}
+        </div>
         <Button onClick={this.deleteCard} text="🗑" className="delete-card" />
       </div>
     );
