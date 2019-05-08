@@ -7,15 +7,16 @@ class Modal extends React.Component {
     onClose: () => {
       return;
     },
-    addCard: () => {
+    onSubmit: () => {
       return;
-    }
+    },
+    value: ''
   };
   constructor(props) {
     super(props);
 
     this.state = {
-      value: '',
+      value: this.props.value,
       header: 'Add a Comment'
     };
   }
@@ -23,7 +24,7 @@ class Modal extends React.Component {
     this.setState({ value: event.target.value });
   };
   handleOnAddCardClick = () => {
-    this.props.addCard(this.state.value);
+    this.props.onSubmit(this.state.value);
   };
   render() {
     return (

@@ -22,7 +22,6 @@ Alysha Buselt
 - React Router
 
 ## TODO
-- Connect edit card functionality
 - Create demo board
 - Add print functionality
 - Add save functionality

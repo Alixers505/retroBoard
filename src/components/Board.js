@@ -65,11 +65,12 @@ class Board extends React.Component {
 
     this.setState(state => {
       return {
-        modalOpen: false
+        modalOpen: false,
+        currentColumnID: null
       };
     });
   };
-  editCard = (columnID, cardID, cardValue) => {
+  editCard = (columnID, cardID) => {
     // Find the column
     const column = this.state.columns.find(column => {
       return column.id === columnID;
@@ -78,10 +79,33 @@ class Board extends React.Component {
     const card = column.cards.find(card => {
       return card.id === cardID;
     });
-    // Find card value
-    const currentCardValue = card.value;
 
-    this.openModal(columnID, card, currentCardValue);
+    this.openModal(columnID, card.id, card.value);
+  };
+
+  updateCard = cardValue => {
+    this.setState(prevState => {
+      const { currentColumnID, currentCardID, columns } = prevState;
+      return {
+        columns: columns.map(column => {
+          if (column.id !== currentColumnID) {
+            return column;
+          }
+
+          return {
+            ...column,
+            cards: [
+              ...column.cards.filter(card => card.id !== currentCardID),
+              { id: currentCardID, value: cardValue }
+            ]
+          };
+        }),
+        modalOpen: false,
+        currentColumnID: null,
+        currentCardID: null,
+        editCardValue: ''
+      };
+    });
   };
 
   deleteCard = (columnID, cardID) => {
@@ -119,7 +143,11 @@ class Board extends React.Component {
           })}
         </div>
         {this.state.modalOpen && (
-          <Modal onClose={this.closeModal} addCard={this.addCard} />
+          <Modal
+            onClose={this.closeModal}
+            value={this.state.editCardValue}
+            onSubmit={this.state.currentCardID ? this.updateCard : this.addCard}
+          />
         )}
       </div>
     );
