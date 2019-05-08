@@ -20,3 +20,10 @@ Alysha Buselt
 - React
 - Webpack
 - React Router
+
+## TODO
+- Connect edit card functionality
+- Create demo board
+- Add print functionality
+- Add save functionality
+- Implement responsive styling
