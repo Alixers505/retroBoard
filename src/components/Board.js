@@ -126,7 +126,6 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        <h1>New Board</h1>
         <div id="board">
           {this.state.columns.map(column => {
             return (

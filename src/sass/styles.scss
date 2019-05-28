@@ -2,9 +2,11 @@
 @import 'variables';
 @import 'placeholders';
 @import 'defaults';
+@import 'common';
 
 @import 'wrappers/app';
 @import 'wrappers/boards';
+@import 'wrappers/home';
 
 @import 'components/buttons';
 @import 'components/cards';

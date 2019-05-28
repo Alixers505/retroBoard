@@ -1,0 +1,23 @@
+#home {
+  @extend %flex-col;
+  text-align: center;
+}
+
+.section-wrapper {
+  @extend %flex-row;
+}
+
+.section-card {
+  @extend %card;
+  box-shadow: 0 0 3px $alert;
+  padding: 20px;
+
+  ul,
+  li {
+    text-align: left;
+  }
+}
+
+.section-info {
+  box-shadow: 0 0 3px $info;
+}

@@ -10,6 +10,10 @@
   &:nth-child(odd) {
     margin-right: 10px;
   }
+
+  div {
+    color: $white;
+  }
 }
 
 .card-list {

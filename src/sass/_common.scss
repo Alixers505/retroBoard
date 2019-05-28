@@ -1,0 +1,30 @@
+// Styling common to multiple components/apps
+
+#pageTitleWrapper {
+  @extend %flex-row;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  input,
+  label {
+    display: flex;
+  }
+}
+
+#pageTitle {
+  @extend h2;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.alert {
+  color: $alert;
+  text-align: center;
+}
+
+.info {
+  color: $info;
+}

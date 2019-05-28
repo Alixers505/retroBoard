@@ -1,18 +1,17 @@
 import React from 'react';
+
 import Board from '../components/Board';
-import Column from '../components/Column';
 
 const NewBoard = () => {
   return (
     <div>
-      <h1>New Board</h1>
-      <div id="board">
-        <Column />
-        <Column />
-        <Column />
-      </div>
+      <h2 id="pageTitleWrapper">
+        <label for="pageTitle" />
+        <input id="pageTitle" defaultValue="New Board" />
+      </h2>
+      <Board />
     </div>
   );
 };
 
-export default Board;
+export default NewBoard;

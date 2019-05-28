@@ -16,9 +16,9 @@ $grey-2: lighten($black, 80);
 $grey-1: lighten($black, 90);
 
 // Theme Colors
-$primary: lighten($info, 30);
-$secondary: lighten($success, 30);
-$tertiary: lighten($alert, 30);
+$primary: darken($info, 10);
+$secondary: darken($success, 10);
+$tertiary: darken($alert, 10);
 
 // Fonts
 
