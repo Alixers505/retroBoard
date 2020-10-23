@@ -1,5 +1,5 @@
 import React from 'react';
-import uuid from 'uuid/v1';
+import { v4 as uuidv4 } from 'uuid';
 import Column from './Column';
 import Modal from './Modal';
 
@@ -12,17 +12,17 @@ class Board extends React.Component {
       columns: [
         {
           title: '',
-          id: uuid(),
+          id: uuidv4(),
           cards: []
         },
         {
           title: '',
-          id: uuid(),
+          id: uuidv4(),
           cards: []
         },
         {
           title: '',
-          id: uuid(),
+          id: uuidv4(),
           cards: []
         }
       ],
@@ -51,7 +51,7 @@ class Board extends React.Component {
   addCard = cardValue => {
     const card = {
       value: cardValue,
-      id: uuid()
+      id: uuidv4()
     };
     // Find the column
     const column = this.state.columns.find(column => {
